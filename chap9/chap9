@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov  1 20:30:01 2022
+
+@author: wangyuanjing
+"""
+
+#练习9.1
+fin = open('words.txt')
+for line in fin:
+	word = line.strip()
+	if len(word) > 20:
+		print(word)
+#练习9.2      
+def has_no_e(word):
+    for letter in word:
+        if letter=="e":
+          return False
+        else:
+          return True
+      
+
+fin = open('words.txt')
+m= 0
+n= 0
+for line in fin:
+	word = line.strip()
+	if len(word) > 20:
+		if has_no_e(word):
+			print(word)
+			n = n+1
+		m = m+1
+per = n/m*100
+print('per =',per)
+
+#练习9.3
+def avoids(word,forbidden):
+    for letter in word:
+        if letter in forbidden:
+            return False
+        return True
+avoids("a","apple")
+
+      
+      
+        
+      
+        
+  
+
+    
+        
