@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 10 14:41:41 2022
+
+@author:yangjing
+"""
+#%%练习8.1
+'www.example.com'.strip('cmowz')
+'example'
+'spacious'.strip()
+'spacious'
+'www.example.com'.strip('cmowz.')
+'example'
+'banana'.replace('a', 'e', 2)
+
+
+
+#%%练习8.2
+'banana'.count("a")
+'banana'.count('na')
+
+#%%练习8.3
+def is_palindrome(word):
+    if word[::-1]==word:
+        return True
+    return False
+
+print (is_palindrome('wow'))
+print(is_palindrome('banana'))
+
+#%%练习8.4
+def any_lowercase1(s):
+#返回的结果是字符串第一个字符小写与否
+	for c in s:
+		if c.islower():
+			return True
+		else:
+			return False
+	
+def any_lowercase2(s):
+#返回的结果是'c'这个字符小写与否
+	for c in s:
+		if 'c'.islower():
+			return 'True'
+		else:
+			return 'False'
+
+def any_lowercase3(s):
+#返回的结果是字符串最后一个字符小写与否
+	for c in s:
+		flag = c.islower()
+	return flag
+
+def any_lowercase4(s):
+#返回的结果是字符串有小写字符与否
+	flag = False
+	for c in s:
+		flag = flag or c.islower()
+	return flag
+
+def any_lowercase5(s):
+#返回的结果是字符串全部字符小写与否
+	for c in s:
+		if not c.islower():
+			return False
+	return True
+
+    
+
