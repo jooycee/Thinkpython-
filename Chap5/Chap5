@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov  5 10:04:22 2022
+
+@author: 杨静
+"""
+
+#%%练习5.1
+import time
+
+s = time.time()
+
+day = s // (60 * 60 * 24)
+hour = (s - day * (60 * 60 * 24)) // (60 * 60)
+minute = (s - day * (60 * 60 * 24) - hour * (60 * 60)) // 60
+second = s - day * (60 * 60 * 24) - hour * (60 * 60) - minute * 60
+
+print('time_now',s)
+print('days',day)
+print('hours',hour)
+print('minutes',minute)
+print('seconds',second)
+
+#%%练习5.2.1
+def check_fermat(a,b,c,n):
+    if n>2 and a**n+b**n==c**n:
+        print('Holy smokes,Fermat was wrong')
+    else :
+        print('No,that does not work')
+        
+check_fermat(100,300,800,5)       
+
+#%%练习5.3.1
+def is_tringle(a,b,c):
+    if a+b>c and a+c>b and c+b>a:
+        print('Yes')
+    else:
+        print('No')
+        
+is_tringle(3,4,5)
+
+#%%练习5.4
+def recurse(n,s):
+    if n==0:
+        print(s)
+    else:
+        recurse(n-1,n+s)
+        
+recurse(3,0)
+
+#%%5.5
+import turtle
+tom = turtle.Turtle()
+
+def fd(t, length):
+	t.fd(length)
+	
+def bk(t, length):
+	t.bk(length)
+	
+def lt(t, angle):
+	t.lt(angle)
+	
+def rt(t, angle):
+	t.rt(angle)
+
+def draw(t, length, n):
+	print("调用层数：", m + 1 - n)
+	if n == 0:
+		print("回到层数：", m - n)
+		return
+	angle = 50
+	fd(t, length*n)
+	lt(t, angle)
+	draw(t, length, n-1)
+	rt(t, 2*angle)
+	draw(t, length, n-1)
+	lt(t, angle)
+	bk(t, length*n)
+	if m -n == 0:
+		print("回到主程序")
+	else:
+		print("回到层数：", m - n)
+
+t = tom
+length = 20
+n = 2
+m = n
+print("开始主程序")
+draw(t, length, n)
+turtle.mainloop()
+
+#%%5.6
+
+
+    
+    
