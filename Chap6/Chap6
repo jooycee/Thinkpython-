@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov  5 15:38:33 2022
+
+@author: wangyuanjing
+"""
+
+#%%练习6.1
+def b(z):
+    prod = a(z, z)
+    print(z, prod)
+    return prod
+def a(x, y):
+    x = x + 1
+    return x * y
+def c(x, y, z):
+    total = x + y + z
+    square = b(total)**2
+    return square
+x = 1
+y = x + 1
+print(c(x, y+3, x+y))
+
+#%%练习6.2
+def ack(m,n):
+    if m==0:
+        return n+1
+    elif m>0 and n==0:
+        return ack(m-1,1)
+    elif m>0 and n>0:
+        return ack(m-1,ack(m,n-1))
+
+#%%练习6.3.1
+def first(word):
+    return word[0]
+def last(word):
+    return word[-1]
+def middle(word):
+    return word[1:-1]
+	
+print(middle('wow'))
+print(middle('wo'))
+print(middle('w'))
+print(middle(''))
+
+#%%练习6.3.2
+def is_palindrome(word):
+    n=len(word)
+    if n<=1:
+        return True
+    if first(word)==last(word):
+        return is_palindrome(middle(word))
+    elif first(word)!=last(word):
+        return False
+    
+word='noaaon'
+print(is_palindrome(word))
+
+#%%练习6.4
+def is_power(a,b):
+    if a/b==1 or a/b==a:
+        return True
+    if a%b==0:
+        return is_power(a/b,b)
+    elif a%b!=0:
+        return False
+        
+print(is_power(10,2))
+
+#%%练习6.5
+def gcd(a,b):
+    if b==0:
+        return a
+    else:
+        return gcd(b,a%b)
+    
+print(gcd(5,3))
+    
+
+
+
+   
+        
+        
+    
